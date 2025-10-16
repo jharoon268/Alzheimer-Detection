@@ -1,0 +1,34 @@
+AlzheimerSpeechDetection/
+│
+├── data/
+│   ├── addetector_dataset.csv               # CSV file from Kaggle
+│   ├── audio_files/                         # Folder with all .wav files (if dataset has them separately)
+│   ├── features.npy                         # Auto-generated feature cache (created after running notebook)
+│   ├── features_meta.csv                    # Auto-generated metadata cache
+│   ├── scaler.joblib                        # Saved StandardScaler
+│   └── ... (any other dataset-related files)
+│
+├── models/
+│   ├── rf_alz_model.joblib                  # Trained RandomForest model
+│   ├── cnn_alz_model.h5                     # Trained CNN model
+│   └── ... (any checkpoints or additional models)
+│
+├── notebooks/
+│   └── Alzheimer_Speech_Detection.ipynb     # The Jupyter Notebook (all cells from the code I gave)
+│
+├── src/
+│   ├── __init__.py
+│   ├── feature_extraction.py                # Functions like extract_features(), mfcc_image(), etc.
+│   ├── train_rf.py                          # Random Forest training and evaluation
+│   ├── train_cnn.py                         # CNN training and evaluation
+│   ├── inference.py                         # predict_from_file() and model loading
+│   └── utils.py                             # Helper functions, e.g. label mapping, path resolving
+│
+├── results/
+│   ├── confusion_matrix_rf.png
+│   ├── confusion_matrix_cnn.png
+│   └── training_history_cnn.png
+│
+├── requirements.txt                         # pip dependencies
+├── README.md                                # Overview, how to run, dataset info, results summary
+└── run_experiment.py                        # Optional script that runs everything end-to-end
